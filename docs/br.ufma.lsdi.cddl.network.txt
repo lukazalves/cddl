@@ -1,0 +1,77 @@
+@startuml
+
+package br.ufma.lsdi.cddl.network {
+
+class ConnectionFactory {
+    + {static} Connection createConnection() 
+}
+
+interface Connection {
+
+    + String TCP
+    + String SSL
+    + String ECLIPSE_HOST
+    + String DASHBOARD_HOST
+    + String MOSCA_HOST
+    + String HIVEMQ_HOST
+    + String MOSQUITTO_HOST
+    + String LSD_HOST
+    + String MICRO_BROKER_LOCAL_HOST
+    + String DEFAULT_PORT
+    + String DEFAULT_WEBSOCKET_PORT
+    + String DEFAULT_PASSWORD_FILE
+
+    + void connect(String clientID, String protocol, String host, String port, boolean automaticReconnect, long automaticReconnectionTime, boolean cleanSession, int connectionTimeout, int keepAliveInterval, boolean publishConnectionChangedStatus, int maxInflightMessages, String username, String password, int mqttVersion)
+    + void connect()
+    + boolean isConnected()
+    + void disconnect()
+    + String getProtocol()
+    + void setProtocol(String protocol)
+    + String getHost()
+    + void setHost(String host)
+    + String getPort()
+    + void setPort(String port)
+    + long getAutomaticReconnectionTime()
+    + void setAutomaticReconnectionTime(long automaticReconnectionTime)
+    + boolean isCleanSession()
+    + void setCleanSession(boolean cleanSession)
+    + int getConnectionTimeout()
+    + void setConnectionTimeout(int connectionTimeout)
+    + int getKeepAliveInterval()
+    + void setKeepAliveInterval(int keepAliveInterval)
+    + boolean isAutomaticReconnection()
+    + void setAutomaticReconnection(boolean automaticReconnection)
+    + boolean isPublishConnectionChangedStatus()
+    + void setNotifyConnectionChangedStatus(boolean notifyConnectionChangedStatus)
+    + String getPasswordFile()
+    + void setPasswordFile(String passwordFile)
+    + int getMaxInflightMessages()
+    + void setMaxInflightMessages(int maxInflightMessages)
+    + String getUsername()
+    + void setUsername(String username)
+    + String getPassword()
+    + void setPassword(String password)
+    + boolean isSynchronizedModeActive()
+    + void setSynchronizedModeActive(boolean synchronizedModeActive)
+    + long getRepublicationInterval()
+    + void setRepublicationInterval(long republicationInterval)
+    + boolean isPersistBufferEnable()
+    + void setPersistBufferEnable(boolean persistBufferEnable)
+    + boolean isPersistBuffer()
+    + void setPersistBuffer(boolean persistBuffer)
+    + int getPersistBufferSize()
+    + void setPersistBufferSize(int persistBufferSize)
+    + boolean isDeleteOldestMessagesFromPersistBuffer()
+    + void setDeleteOldestMessagesFromPersistBuffer(boolean deleteOldestMessagesFromPersistBuffer)
+    + void publish(Message message)
+    + void subscribe(String topic, int reliability, IMessageListener connectionListener)
+    + void unsubscribe(String topic, IMessageListener connectionListener)
+    + void unsubscribeAll()
+    + void addConnectionListener(IConnectionListener connectionListener)
+    + void removeConnectionListener(IConnectionListener connectionListener)
+    + void removeAllConnectionListeners()
+    + boolean isEnableIntermediateBuffer()
+    + void setEnableIntermediateBuffer(boolean enableIntermediateBuffer)
+}
+
+@enduml

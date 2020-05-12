@@ -1,0 +1,43 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.eclipse.moquette.server.test" >
+4
+5    <uses-sdk
+5-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:5:5-74
+6        android:minSdkVersion="21"
+6-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:5:15-41
+7        android:targetSdkVersion="27" />
+7-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:5:42-71
+8
+9    <instrumentation
+9-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:11:5-15:82
+10        android:name="android.test.InstrumentationTestRunner"
+10-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:11:22-75
+11        android:functionalTest="false"
+11-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:13:22-53
+13        android:label="Tests for org.eclipse.moquette.server.test"
+13-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:15:22-80
+14        android:targetPackage="org.eclipse.moquette.server.test" />
+14-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:12:22-78
+15
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->[__tested_artifact__::microbroker] /home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-67
+16-->[__tested_artifact__::microbroker] /home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:22-64
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->[__tested_artifact__::microbroker] /home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+17-->[__tested_artifact__::microbroker] /home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-78
+18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+18-->[__tested_artifact__::microbroker] /home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-80
+18-->[__tested_artifact__::microbroker] /home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-77
+19
+20    <application android:debuggable="true" >
+20-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:7:5-9:19
+20-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:7:18-43
+21        <uses-library android:name="android.test.runner" />
+21-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:8:9-60
+21-->/home/lcmuniz/GoogleDrive/workspaces/ufma/cddlGitRep/codigo/microbroker/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8579187958545462453.xml:8:23-57
+22    </application>
+23
+24</manifest>

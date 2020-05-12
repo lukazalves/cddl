@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    //implementation 'com.android.support:appcompat-v7:25.4.0'
+    //implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'com.android.support:support-core-ui:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+
+    compileOnly 'org.projectlombok:lombok:1.16.20'
+    annotationProcessor 'org.projectlombok:lombok:1.16.20'
+
+    compileOnly files('libs_compile/asper-4.9.0.jar')
+    implementation project(':mhub')
+    implementation project(':microbroker')
+}

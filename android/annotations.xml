@@ -1,0 +1,5 @@
+<root>
+    <item name='android.Manifest.permission MODIFY_PHONE_STATE'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

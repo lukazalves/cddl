@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:./mhub/libs/BioHarnessBT.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mhub/libs/BioHarnessBT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

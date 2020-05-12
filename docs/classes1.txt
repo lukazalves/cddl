@@ -1,0 +1,73 @@
+@startuml
+
+package br.ufma.lsdi.cddl.util {
+
+    class CDDL {
+
+        + {static} final int SENSOR_DELAY_NORMAL = SensorManager.SENSOR_DELAY_NORMAL
+        + {static} final int SENSOR_DELAY_FASTEST = SensorManager.SENSOR_DELAY_FASTEST
+        + {static} final int SENSOR_DELAY_GAME = SensorManager.SENSOR_DELAY_GAME
+        + {static} final int SENSOR_DELAY_UI = SensorManager.SENSOR_DELAY_UI
+        + {static} CDDL getInstance()
+        + void startServices(Context context)
+        + void stopServices(Context context)
+        + void startAllCommunicationTechnologies()
+        + void stopAllCommunicationTechnologies()
+        + void startCommunicationTechnology(int technology)
+        + void stopCommunicationTechnology(int technology)
+        + void startInternalSensorTechnology()
+        + void stopInternalSensorTechnology()
+        + void startBluetoothLowEnergyTechnology()
+        + void stopBluetoothLowEnergyTechnology()
+        + void startBluetoothClassicTechnology()
+        + void stopBluetoothClassicTechnology()
+        + void startAllSensors()
+        + void startAllSensors(int delayType)
+        + void stopAllSensors()
+        + void startSensor(String sensorName)
+        + void startSensor(String sensorName, int delayType)
+        + void startSensorById(int id)
+        + void startSensorById(int id, int delayType)
+        + void stopSensorById(int id)
+        + void stopSensor(String sensorName)
+        + void startLocationSensor()
+        + void startLocationSensor(long interval)
+        + void stopLocationSensor()
+        + void startBatterySensor()
+        + void startBatterySensor(long interval)
+        + void stopBatterySensor()
+        + Publisher getDefaultPublisher()
+        + Subscriber getDefaultSubscriber()
+        + String getClientId()
+        + void setClientId(String clientId)
+        + void startMicroBroker(String host, String port, String webSocketPort, String passwordFile)
+        + void startMicroBroker()
+        + void stopMicroBroker()
+        + Connection createConnection()
+        + Publisher createPublisher()
+        + Subscriber createSubscriber()
+
+    }
+
+    class Time {
+        + {static} long getCurrentTimestamp()
+        + {static} Date getData()
+    }
+
+    class Topic {
+
+        + {static} final String DOMAIN_PARTICIPANT_TOPIC = "mhub"
+        + {static} final String QUERY_TOPIC = "query_topic"
+        + {static} final String QUERY_RESPONSE_TOPIC = "query_response_topic"
+        + {static} final String EVENT_QUERY_TOPIC = "event_query_topic"
+        + {static} final String EVENT_QUERY_RESPONSE_TOPIC = "event_query_response_topic"
+        + {static} final String SERVICE_TOPIC = "service_topic"
+        + {static} final String SERVICE_INFORMATION_TOPIC = "service_information_topic"
+        + {static} final String LIVELINESS_TOPIC = "liveliness_topic"
+        + {static} final String CONNECTION_CHANGED_STATUS_TOPIC = "connection_changed_status_topic"
+
+    }
+
+}
+
+@enduml
