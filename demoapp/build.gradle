@@ -39,3 +39,12 @@ dependencies {
 
     implementation project(':cddl')
 }
+
+allprojects{
+    repositories{
+
+        google()
+        jcenter()
+        maven {url "http://lsdi.ufma.br:8081/artifactory/libs-release-local"}
+    }
+}

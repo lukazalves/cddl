@@ -3,6 +3,7 @@ package example.com.demoappm_hubcddl;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.hardware.Sensor;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.Date;
+import java.util.List;
 
 import br.ufma.lsdi.cddl.CDDL;
 import br.ufma.lsdi.cddl.ConnectionFactory;
@@ -27,18 +29,26 @@ import lombok.val;
 public class MainActivity extends Activity {
 
     CDDL cddl;
-
+    private MainController controller;
     private TextView messageTextView;
     private View sendButton;
     private ConnectionImpl conLocal;
     private ConnectionImpl conRemota;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        controller = new MainController();
+
+        if(savedInstanceState == null){
+            controller.config(this);
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        configSpinner();
         setPermissions();
 
         setViews();
@@ -187,6 +197,10 @@ public class MainActivity extends Activity {
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
 
+    }
+
+
+    private void configSpinner(){
     }
 
 }

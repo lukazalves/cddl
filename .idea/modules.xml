@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/cddl/cddl-cddl.iml" filepath="$PROJECT_DIR$/cddl/cddl-cddl.iml" group="cddl/cddl" />
-      <module fileurl="file://$PROJECT_DIR$/demoapp/demoapp.iml" filepath="$PROJECT_DIR$/demoapp/demoapp.iml" group="cddl/demoapp" />
-      <module fileurl="file://$PROJECT_DIR$/mhub/mhub.iml" filepath="$PROJECT_DIR$/mhub/mhub.iml" group="cddl/mhub" />
-      <module fileurl="file://$PROJECT_DIR$/microbroker/microbroker.iml" filepath="$PROJECT_DIR$/microbroker/microbroker.iml" group="cddl/microbroker" />
-      <module fileurl="file://$PROJECT_DIR$/ufma-cddl.iml" filepath="$PROJECT_DIR$/ufma-cddl.iml" group="cddl" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cddl.iml" filepath="$PROJECT_DIR$/.idea/modules/cddl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/accesscontrol/cddl.accesscontrol.iml" filepath="$PROJECT_DIR$/.idea/modules/accesscontrol/cddl.accesscontrol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cddl/cddl.cddl.iml" filepath="$PROJECT_DIR$/.idea/modules/cddl/cddl.cddl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demoapp/cddl.demoapp.iml" filepath="$PROJECT_DIR$/.idea/modules/demoapp/cddl.demoapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mhub/cddl.mhub.iml" filepath="$PROJECT_DIR$/.idea/modules/mhub/cddl.mhub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/microbroker/cddl.microbroker.iml" filepath="$PROJECT_DIR$/.idea/modules/microbroker/cddl.microbroker.iml" />
     </modules>
   </component>
 </project>
