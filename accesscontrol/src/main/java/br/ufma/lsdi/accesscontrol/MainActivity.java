@@ -3,20 +3,20 @@ package br.ufma.lsdi.accesscontrol;
 import android.hardware.Sensor;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+
+import org.apache.commons.lang3.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,20 +24,23 @@ import java.util.stream.Collectors;
 
 import br.ufma.lsdi.cddl.message.Message;
 
+//import android.widget.ArrayAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     private MainController controller;
     private Button startButton;
     private Button stopButton;
     List<String> listViewMessages;
-    ListAdapter listAdapter;
-    ListViewAdapter listViewAdapter;
+    public ListViewAdapter listViewAdapter;
+    private Handler handler;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         controller = new MainController();
+        handler = new Handler();
 
         if(savedInstanceState == null){
             controller.config(this);
@@ -67,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void messageHandler(Message message) {
+        handler.post(() -> {
+            Object[] serviceValue = message.getServiceValue().toString();
+            String values = StringUtils.join(serviceValue, ", ");
+            listViewMessages.add(0,values);
+            listViewAdapter.notifyDataSetChanged();
+        });
     }
 
     private void configListView() {
@@ -97,6 +106,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void configClearButton(){
+        final Button clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(
+                e -> {
+                    listViewMessages.clear();
+                    listViewAdapter.notifyDataSetChanged();
+                }
+        );
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -125,9 +144,9 @@ public class MainActivity extends AppCompatActivity {
         List<Sensor> sensors = controller.getInternalListSensor();
         List<String> sensorNames = sensors.stream().map(sensor -> sensor.getName()).collect(Collectors.toList());
 
-        ArrayAdapter<String> adpter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, sensorNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, sensorNames);
         Spinner spinner = findViewById(R.id.spinner);
-        spinner.setAdapter(adpter);
+        spinner.setAdapter(adapter);
 
     }
 
