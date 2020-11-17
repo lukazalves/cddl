@@ -16,15 +16,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import org.apache.commons.lang3.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 import br.ufma.lsdi.cddl.message.Message;
 
-//import android.widget.ArrayAdapter;
+import android.widget.ArrayAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private void messageHandler(Message message) {
         handler.post(() -> {
             Object[] serviceValue = message.getServiceValue().toString();
-            String values = StringUtils.join(serviceValue, ", ");
+            String values = com.android.tradefed.util.StringUtil;
             listViewMessages.add(0,values);
             listViewAdapter.notifyDataSetChanged();
         });
