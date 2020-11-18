@@ -1,5 +1,6 @@
 package br.ufma.lsdi.accesscontrol;
 
+import android.annotation.SuppressLint;
 import android.hardware.Sensor;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -20,18 +22,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 import br.ufma.lsdi.cddl.message.Message;
-
-import android.widget.ArrayAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     private MainController controller;
     private Button startButton;
     private Button stopButton;
-    List<String> listViewMessages;
-    public ListViewAdapter listViewAdapter;
+    private List<String> listViewMessages;
+    private ListViewAdapter listViewAdapter;
     private Handler handler;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.spinner);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,16 +69,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void messageHandler(Message message) {
         handler.post(() -> {
-            Object[] serviceValue = message.getServiceValue().toString();
-            String values = com.android.tradefed.util.StringUtil;
-            listViewMessages.add(0,values);
-            listViewAdapter.notifyDataSetChanged();
+            //Object[] serviceValue = message.getServiceValue().toString();
+            //String values = String.join(", ", serviceValue);
+            //String values = StringUtils.join(serviceValue,", ");
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            System.out.println(message);
+            //listViewMessages.add(0,values);
+            //listViewAdapter.notifyDataSetChanged();
         });
     }
 
     private void configListView() {
-        ListView listView = findViewById(R.id.listview);
+        @SuppressLint("WrongViewCast") ListView listView = findViewById(R.id.listview);
         listViewMessages = new ArrayList<>();
+        //listViewAdapter = new ListViewAdapter(this,listViewMessages);
+        listView.setAdapter(listViewAdapter);
 
     }
 
