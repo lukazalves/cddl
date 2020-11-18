@@ -27,7 +27,6 @@ import lombok.val;
 public class MainActivity extends Activity {
 
     CDDL cddl;
-
     private TextView messageTextView;
     private View sendButton;
     private ConnectionImpl conLocal;
@@ -38,22 +37,15 @@ public class MainActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         setPermissions();
-
         setViews();
-
         configConLocal();
         configConRemota();
-
         initCDDL();
         //startAccelerometer();
         //subscribeAccelerometer();
-
         subscribeMessage();
-
         //publishMessage();
-
         sendButton.setOnClickListener(clickListener);
 
     }

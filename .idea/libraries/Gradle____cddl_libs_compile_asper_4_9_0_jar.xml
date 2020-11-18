@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./cddl/libs_compile/asper-4.9.0.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/cddl/libs_compile/asper-4.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

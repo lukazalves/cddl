@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./mhub/libs/lib.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mhub/libs/lib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

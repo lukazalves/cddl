@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./mhub/libs/HxMBT.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mhub/libs/HxMBT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
