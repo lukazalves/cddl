@@ -42,6 +42,9 @@ public class MainController {
         cddl.startCommunicationTechnology(CDDL.INTERNAL_TECHNOLOGY_ID);
     }
 
+
+
+
     public List<Sensor> getInternalSensorList() {
 
         return cddl.getInternalSensorList();

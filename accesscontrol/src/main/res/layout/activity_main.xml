@@ -38,11 +38,28 @@
             android:visibility="visible"
             tools:visibility="visible" />
 
-        <android.support.v7.widget.RecyclerView
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textMensagens" />
+
+        <EditText
+            android:id="@+id/editTextBT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+
+
+      <!--  <android.support.v7.widget.RecyclerView
             android:id="@+id/listView"
             android:layout_width="408dp"
             android:layout_height="476dp"
-            android:visibility="visible" />
+            android:visibility="visible" /> -->
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
