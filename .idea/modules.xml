@@ -5,9 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cddl.iml" filepath="$PROJECT_DIR$/.idea/modules/cddl.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/accesscontrol/cddl.accesscontrol.iml" filepath="$PROJECT_DIR$/.idea/modules/accesscontrol/cddl.accesscontrol.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cddl/cddl.cddl.iml" filepath="$PROJECT_DIR$/.idea/modules/cddl/cddl.cddl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/controleii/cddl.controleii.iml" filepath="$PROJECT_DIR$/.idea/modules/controleii/cddl.controleii.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demoapp/cddl.demoapp.iml" filepath="$PROJECT_DIR$/.idea/modules/demoapp/cddl.demoapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mhub/cddl.mhub.iml" filepath="$PROJECT_DIR$/.idea/modules/mhub/cddl.mhub.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/microbroker/cddl.microbroker.iml" filepath="$PROJECT_DIR$/.idea/modules/microbroker/cddl.microbroker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myapplication/cddl.myapplication.iml" filepath="$PROJECT_DIR$/.idea/modules/myapplication/cddl.myapplication.iml" />
     </modules>
   </component>
 </project>

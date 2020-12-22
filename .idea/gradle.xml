@@ -13,9 +13,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/accesscontrol" />
             <option value="$PROJECT_DIR$/cddl" />
+            <option value="$PROJECT_DIR$/controleii" />
             <option value="$PROJECT_DIR$/demoapp" />
             <option value="$PROJECT_DIR$/mhub" />
             <option value="$PROJECT_DIR$/microbroker" />
+            <option value="$PROJECT_DIR$/myapplication" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

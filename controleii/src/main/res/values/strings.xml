@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Controle II</string>
+    <string name="hello_text_view">Mudando o Texto</string>
+    <string name="text_button">Exibir Mensagens</string>
+</resources>
