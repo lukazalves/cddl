@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 package br.ufma.lsdi.accesscontrol;
 
 
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -25,6 +26,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 import java.util.List;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Create a BroadcastReceiver for ACTION_FOUND.
     private final BroadcastReceiver receiver = new BroadcastReceiver() {
+        @SuppressLint("LongLogTag")
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
@@ -57,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 String deviceName = device.getName();
                 String deviceHardwareAddress = device.getAddress(); // MAC address
+                Log.d("BroadcastReceiver: Device Name: ", deviceName );
+                Log.d("BroadcastReceiver: MAC: ", deviceHardwareAddress);
+
             }
         }
     };
