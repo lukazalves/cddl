@@ -1,7 +1,7 @@
 package br.ufma.lsdi.cddl.message;
-import com.android.internal.util.Predicate;
 
 import java.io.Serializable;
+import java.util.function.Predicate;
 
 public final class EventQueryMessage extends Message implements Serializable {
 
