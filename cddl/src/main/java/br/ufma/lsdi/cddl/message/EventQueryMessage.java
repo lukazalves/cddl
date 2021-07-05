@@ -1,5 +1,4 @@
 package br.ufma.lsdi.cddl.message;
-
 import com.android.internal.util.Predicate;
 
 import java.io.Serializable;

@@ -32,20 +32,35 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.Set;
 
+import br.ufma.lsdi.cddl.message.Message;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button startButton;
     private List<String> listViewMessages;
+    private MainController controller;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        controller = new MainController();
+
+        if(savedInstanceState == null) {
+            controller.config(this);
+            controller.configSubscriber();
+            controller.setListener(message -> messageHandler(message));
+        }
         configBluetooth();
         configStartButton();
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         registerReceiver(receiver, filter);
+    }
+
+    private void messageHandler(Message message){
+        System.out.println(message);
     }
 
 

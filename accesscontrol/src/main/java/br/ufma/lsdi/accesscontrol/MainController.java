@@ -40,16 +40,16 @@ public class MainController {
         cddl.startService();
 
         cddl.startCommunicationTechnology(CDDL.INTERNAL_TECHNOLOGY_ID);
+        cddl.startCommunicationTechnology(CDDL.BT_TECHNOLOGY_ID);
     }
 
     public List<Sensor> getInternalSensorList() {
-
         return cddl.getInternalSensorList();
     }
 
-    public void startSensor(String selectedSendor) {
-        cddl.startSensor(selectedSendor);
-        currentSensor = selectedSendor;
+    public void startSensor(String selectedSensor) {
+        cddl.startSensor(selectedSensor);
+        currentSensor = selectedSensor;
     }
 
     public void subscribeServiceByName(String selectedSensor){
@@ -67,5 +67,13 @@ public class MainController {
 
     public void stopCurrentSensor(){
         cddl.stopSensor(currentSensor);
+    }
+
+    public void setFilter(String filter){
+        subscriber.setFilter(filter);
+    }
+
+    public void clearFilter(){
+        subscriber.clearFilter();
     }
 }
