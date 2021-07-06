@@ -27,8 +27,12 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -39,13 +43,16 @@ public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private List<String> listViewMessages;
     private MainController controller;
+    private Spinner deviceSpinner;
+    private List<String> devices;
+    private  ArrayAdapter<String> spinnerAdapter;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        deviceSpinner = findViewById(R.id.spinner);
         controller = new MainController();
 
         if(savedInstanceState == null) {
@@ -53,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             controller.configSubscriber();
             controller.setListener(message -> messageHandler(message));
         }
+        configList();
         configBluetooth();
         configStartButton();
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
@@ -75,9 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 String deviceName = device.getName();
                 String deviceHardwareAddress = device.getAddress(); // MAC address
-                Log.d("BroadcastReceiver: Device Name: ", deviceName );
-                Log.d("BroadcastReceiver: MAC: ", deviceHardwareAddress);
-
             }
         }
     };
@@ -100,15 +105,27 @@ public class MainActivity extends AppCompatActivity {
             // There are paired devices. Get the name and address of each paired device.
             for (BluetoothDevice device : pairedDevices) {
                 String deviceName = device.getName();
+                devices.add(deviceName);
                 String deviceHardwareAddress = device.getAddress(); // MAC address
             }
+            setSpinnerAdapter();
         }
+    }
+
+
+    private void configList(){
+        devices = new ArrayList<>();
+        spinnerAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, devices);
+    }
+
+    private void setSpinnerAdapter(){
+        deviceSpinner.setAdapter(spinnerAdapter);
     }
 
     private void configStartButton() {
         startButton = findViewById(R.id.start_button);
         startButton.setOnClickListener(e -> {
-            Toast.makeText(this,"Start Button Pressed", Toast.LENGTH_SHORT);
+            Toast.makeText(this,"Start Button Pressed", Toast.LENGTH_SHORT).show();
         });
     }
 
